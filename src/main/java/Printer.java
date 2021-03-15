@@ -1,10 +1,12 @@
 public class Printer {
 
     private int paperLeft;
+    private int tonerVolume;
 
 
-    public Printer(int paperLeft) {
+    public Printer(int paperLeft, int tonerVolume) {
         this.paperLeft = paperLeft;
+        this.tonerVolume = tonerVolume;
     }
 
     public int print(int copies, int pages) {
@@ -18,4 +20,11 @@ public class Printer {
             return true;
         }
     }
+
+    public int decreaseToner(int copies, int pages){
+        return this.tonerVolume - copies * pages;
+
+    }
+
+
 }
